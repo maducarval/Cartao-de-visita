@@ -54,7 +54,7 @@ body{margin:0;min-height:100vh;padding:26px 16px;display:grid;place-items:center
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.2 11.8a8.2 8.2 0 0 1-12.1 7.1L3 20l1.2-4.9A8.2 8.2 0 1 1 20.2 11.8Z"/><path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.6 1 1.4 1.7 2.4 2.2.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.3.6-.1.7-.8 1.5-1.6 1.7-1 .2-2.2-.2-3.5-1-1.8-1.1-3-2.8-3.4-3.9-.4-1.1 0-2.2.5-2.9Z"/></svg>
       Planejar minha viagem
     </a>
-  </div>
+</div>
 </section>
 <section class="back" id="back" aria-label="Verso do cartão">
   <div class="back-head"><div class="monogram">B.</div><div class="eyebrow" style="color:#9b7c44">Bete · Consultora<br>de Viagem</div></div>
@@ -72,9 +72,20 @@ body{margin:0;min-height:100vh;padding:26px 16px;display:grid;place-items:center
 <footer class="foot">Bete <span>·</span> Consultoria de Viagens</footer>
 </main>
 <script>
-const vcard=["BEGIN:VCARD","VERSION:3.0","FN:Bete","TITLE:Consultora de Viagem","TEL;TYPE=CELL,WHATSAPP:+5561992143300","URL:https://www.instagram.com/borabeteviagens/","NOTE:Instagram da loja: @cvc.df.comercialnortetagua","END:VCARD"].join("\\r\\n");
-document.getElementById("saveContact").addEventListener("click",function(e){e.preventDefault();const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Bete-Consultora-de-Viagens.vcf";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)});
-document.getElementById("flip").addEventListener("click",function(){const front=document.getElementById("front"),back=document.getElementById("back"),isBack=back.classList.toggle("visible");front.classList.toggle("hidden",isBack);this.innerHTML=isBack?'<span class="switch-icon" aria-hidden="true">↶</span><span>VOLTAR À FRENTE DO CARTÃO</span>':'<span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span>';});
+const flipButton = document.getElementById("flip");
+const frontCard = document.getElementById("front");
+const backCard = document.getElementById("back");
+
+if (flipButton && frontCard && backCard) {
+  flipButton.addEventListener("click", function () {
+    const showingBack = backCard.classList.toggle("visible");
+    frontCard.classList.toggle("hidden", showingBack);
+    flipButton.setAttribute("aria-expanded", String(showingBack));
+    flipButton.innerHTML = showingBack
+      ? '<span class="switch-icon" aria-hidden="true">↶</span><span>VOLTAR À FRENTE DO CARTÃO</span>'
+      : '<span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span>';
+  });
+}
 </script>
 </body>
 </html>
