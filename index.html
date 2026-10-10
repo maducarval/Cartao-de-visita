@@ -6,6 +6,9 @@
 <meta name="theme-color" content="#14283f">
 <meta name="description" content="Bete, consultora de viagens. Seu sonho tem um destino e eu te levo até ele.">
 <title>Bete | Consultora de Viagens</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
 :root{--navy:#14283f;--navy2:#203b56;--gold:#c8aa70;--cream:#f7f3eb;--paper:#fffdf8;--ink:#263342;--muted:#687583;--line:#e7dfd0}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -60,8 +63,8 @@ body{margin:0;min-height:100vh;padding:26px 16px;display:grid;place-items:center
   <div class="back-head"><div class="monogram">B.</div><div class="eyebrow" style="color:#9b7c44">Bete · Consultora<br>de Viagem</div></div>
   <h2>Vamos planejar<br>sua próxima viagem?</h2>
   <p>Escaneie o QR Code para abrir este cartão e entrar em contato pelo WhatsApp.</p>
-  <div class="qr-wrap"><div id="qrcode" aria-label="QR Code para este cartão"></div></div>
-  <div class="qr-note" id="qrNote">Publique o site para gerar um QR Code com o endereço público.</div>
+  <div class="qr-wrap"><img src="qrcode-whatsapp-bete.png" alt="QR Code para conversar com Bete pelo WhatsApp" style="display:block;width:168px;height:168px;object-fit:contain" /></div>
+  <div class="qr-note">Aponte a câmera do celular para conversar com a Bete pelo WhatsApp.</div>
   <div class="socials">
     <a class="social" href="https://www.instagram.com/borabeteviagens/" target="_blank" rel="noopener"><span class="at">@</span><span><strong>Instagram da Bete</strong><small>@borabeteviagens</small></span></a>
     <a class="social" href="https://www.instagram.com/cvc.df.comercialnortetagua/" target="_blank" rel="noopener"><span class="at">@</span><span><strong>Instagram da loja</strong><small>@cvc.df.comercialnortetagua</small></span></a>
@@ -69,14 +72,19 @@ body{margin:0;min-height:100vh;padding:26px 16px;display:grid;place-items:center
   </div>
 </section>
 <button class="switch" id="flip" type="button" aria-controls="back"><span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span></button>
-<div class="notice" id="notice">Publique o site e abra o endereço público para gerar o QR Code.</div>
 <footer class="foot">Bete <span>·</span> Consultoria de Viagens</footer>
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 const vcard=["BEGIN:VCARD","VERSION:3.0","FN:Bete","TITLE:Consultora de Viagem","TEL;TYPE=CELL,WHATSAPP:+5561992143300","URL:https://www.instagram.com/borabeteviagens/","NOTE:Instagram da loja: @cvc.df.comercialnortetagua","END:VCARD"].join("\\r\\n");
 document.getElementById("saveContact").addEventListener("click",function(e){e.preventDefault();const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Bete-Consultora-de-Viagens.vcf";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)});
-document.getElementById("flip").addEventListener("click",function(){const front=document.getElementById("front"),back=document.getElementById("back"),isBack=back.classList.toggle("visible");front.classList.toggle("hidden",isBack);this.innerHTML=isBack?'<span class="switch-icon" aria-hidden="true">↶</span><span>VOLTAR À FRENTE DO CARTÃO</span>':'<span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span>';if(isBack&&!window.qrMade){const target=location.protocol==="file:"?"":location.href.split("#")[0];if(target&&window.QRCode){new QRCode(document.getElementById("qrcode"),{text:target,width:168,height:168,colorDark:"#14283f",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});document.getElementById("qrNote").textContent="Escaneie para abrir o cartão digital.";window.qrMade=true}else{document.getElementById("qrNote").textContent="Publique o site e abra o endereço público para gerar o QR Code.";document.getElementById("notice").style.display="block"}}});
+document.getElementById("flip").addEventListener("click",function(){
+  const front=document.getElementById("front"),back=document.getElementById("back");
+  const isBack=back.classList.toggle("visible");
+  front.classList.toggle("hidden",isBack);
+  this.innerHTML=isBack
+    ? '<span class="switch-icon" aria-hidden="true">↶</span><span>VOLTAR À FRENTE DO CARTÃO</span>'
+    : '<span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span>';
+});
 </script>
 </body>
 </html>
