@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14283f">
+<meta name="description" content="Bete, consultora de viagens. Seu sonho tem um destino e eu te levo até ele.">
+<title>Bete | Consultora de Viagens</title>
+<style>
+:root{--navy:#14283f;--navy2:#203b56;--gold:#c8aa70;--cream:#f7f3eb;--paper:#fffdf8;--ink:#263342;--muted:#687583;--line:#e7dfd0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;padding:26px 16px;display:grid;place-items:center;background:#15202b;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;position:relative;isolation:isolate}body:before{content:"";position:fixed;inset:0;z-index:-2;background:url("fundo-praia-animado.gif") center center/cover no-repeat}body:after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,22,34,.26),rgba(10,22,34,.48))}
+.page{width:min(100%,430px)}.card{position:relative;overflow:hidden;isolation:isolate;border-radius:28px;background:var(--navy);color:white;box-shadow:0 24px 70px #14283f2b}
+.card:before{content:"";position:absolute;z-index:-1;width:270px;height:270px;border:1px solid #c8aa7060;border-radius:50%;top:-115px;right:-95px;box-shadow:0 0 0 22px #c8aa7010,0 0 0 48px #c8aa700a}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:24px 25px 0}.monogram{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font-family:Georgia,serif;font-size:20px}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:700;text-align:right}
+.hero{padding:25px 26px 25px}.profile{display:flex;align-items:center;gap:17px;margin-bottom:24px}.portrait{width:108px;height:108px;flex:0 0 108px;border-radius:50%;border:2px solid var(--gold);padding:4px;background:#ffffff0c;overflow:hidden;display:grid;place-items:center;text-align:center;color:#e8dfce;font-size:10px;line-height:1.4}
+.portrait img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}.portrait .placeholder{padding:6px}.profile-copy{min-width:0}.overline{margin:0 0 8px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.profile h1{margin:0;font:500 47px/1 Georgia,"Times New Roman",serif;letter-spacing:-.04em}.role{margin:9px 0 0;color:#e8dfce;font-size:12px;line-height:1.4;letter-spacing:.02em}
+.goldline{width:56px;height:2px;background:var(--gold);margin:21px 0 17px}.tagline{margin:0;max-width:320px;font-family:Georgia,serif;font-size:22px;line-height:1.35;color:#fffaf0}.subcopy{margin:12px 0 0;max-width:310px;font-size:13px;line-height:1.65;color:#d3dbe2}
+.actions{display:grid;gap:10px;padding:0 24px 24px}.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:13px 16px;border-radius:13px;text-decoration:none;font-size:14px;font-weight:700;transition:transform .15s ease,filter .15s ease}.btn:hover{transform:translateY(-1px);filter:brightness(1.04)}.btn-primary{background:var(--gold);color:var(--navy)}.btn-outline{color:#fff;border:1px solid #ffffff55;background:#ffffff08}.btn svg{width:19px;height:19px;flex:none}
+.back{display:none;background:var(--paper);color:var(--navy);min-height:510px;padding:25px;border-radius:28px;box-shadow:0 24px 70px #14283f2b}.back.visible{display:block}.front.hidden{display:none}.back-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.back h2{font:500 29px Georgia,serif;margin:26px 0 8px}.back p{color:var(--muted);font-size:13px;line-height:1.6}.qr-wrap{margin:22px auto 15px;width:190px;min-height:190px;display:grid;place-items:center;padding:10px;background:white;border:1px solid var(--line);border-radius:16px}#qrcode{width:168px;height:168px;display:grid;place-items:center}#qrcode img,#qrcode canvas{max-width:100%;height:auto}.qr-note{text-align:center;font-size:12px;color:var(--muted)}.socials{display:grid;gap:10px;margin-top:22px}.social{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:13px;text-decoration:none;color:var(--navy);background:#fff}.social .at{color:#a4864d;font-weight:800;font-size:18px;width:25px;text-align:center}.social strong{display:block;font-size:13px}.social small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.switch{display:flex;width:100%;align-items:center;justify-content:center;gap:12px;margin-top:16px;border:2px solid var(--navy);background:var(--navy);color:#fff;border-radius:14px;text-decoration:none;font-family:inherit;font-size:18px;font-weight:800;line-height:1.25;cursor:pointer;padding:17px 16px;min-height:62px;box-shadow:0 5px 0 #c8aa70;transition:transform .15s ease,filter .15s ease}.switch:hover{filter:brightness(1.08);transform:translateY(-1px)}.switch:focus-visible{outline:4px solid var(--gold);outline-offset:3px}.switch .switch-icon{font-size:25px;line-height:1}.foot{text-align:center;padding:18px 12px 0;color:#6c716f;font-size:11px;letter-spacing:.04em}.foot span{color:#9b7c44}.notice{display:none;margin-top:12px;font-size:12px;text-align:center;color:#8b3d31}
+@media(max-width:360px){.profile{gap:12px}.portrait{width:88px;height:88px;flex-basis:88px}.profile h1{font-size:42px}.hero{padding-left:20px;padding-right:20px}.actions{padding-left:18px;padding-right:18px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="page">
+<section class="card front" id="front" aria-label="Cartão digital de Bete">
+  <div class="topline"><div class="monogram" aria-hidden="true">B.</div><div class="eyebrow">Viagens feitas<br>para você</div></div>
+  <div class="hero">
+    <div class="profile">
+      <!-- FOTO DA BETE: coloque o arquivo foto-bete.jpg na mesma pasta deste index.html. -->
+      <div class="portrait">
+        <img src="foto-bete.png" alt="Foto de Bete, consultora de viagens"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="placeholder" style="display:none">Adicione aqui<br>a foto da Bete</span>
+      </div>
+      <div class="profile-copy">
+        <p class="overline">Consultoria de viagens</p>
+        <h1>Bete</h1>
+        <p class="role">Consultora de Viagem</p>
+      </div>
+    </div>
+    <div class="goldline"></div>
+    <p class="tagline">Seu sonho tem um destino e eu te levo até ele.</p>
+    <p class="subcopy">Há 15 anos transformando sonhos em destinos reais.</p>
+  </div>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://wa.me/5561992143300?text=Ol%C3%A1%20gostaria%20de%20ajuda%20para%20planejar%20uma%20viagem." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.2 11.8a8.2 8.2 0 0 1-12.1 7.1L3 20l1.2-4.9A8.2 8.2 0 1 1 20.2 11.8Z"/><path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.2.2-.2.4 0 .6.6 1 1.4 1.7 2.4 2.2.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.3.6-.1.7-.8 1.5-1.6 1.7-1 .2-2.2-.2-3.5-1-1.8-1.1-3-2.8-3.4-3.9-.4-1.1 0-2.2.5-2.9Z"/></svg>
+      Planejar minha viagem
+    </a>
+    <a class="btn btn-outline" href="#" id="saveContact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0 1 7-7h1M19 8v8m-4-4h8"/></svg>
+      Salvar contato
+    </a>
+  </div>
+</section>
+<section class="back" id="back" aria-label="Verso do cartão">
+  <div class="back-head"><div class="monogram">B.</div><div class="eyebrow" style="color:#9b7c44">Bete · Consultora<br>de Viagem</div></div>
+  <h2>Vamos planejar<br>sua próxima viagem?</h2>
+  <p>Escaneie o QR Code para abrir este cartão e entrar em contato pelo WhatsApp.</p>
+  <div class="qr-wrap"><div id="qrcode" aria-label="QR Code para este cartão"><img
+  id="qrcode"
+  src="qrcode-whatsapp-bete.png"
+  alt="QR Code para este cartão"
+/></div></div>
+  <div class="qr-note" id="qrNote">Publique o site para gerar um QR Code com o endereço público.</div>
+  <div class="socials">
+    <a class="social" href="https://www.instagram.com/borabeteviagens/" target="_blank" rel="noopener"><span class="at">@</span><span><strong>Instagram da Bete</strong><small>@borabeteviagens</small></span></a>
+    <a class="social" href="https://www.instagram.com/cvc.df.comercialnortetagua/" target="_blank" rel="noopener"><span class="at">@</span><span><strong>Instagram da loja</strong><small>@cvc.df.comercialnortetagua</small></span></a>
+    <a class="btn btn-primary" href="https://wa.me/5561992143300?text=Ol%C3%A1%20gostaria%20de%20ajuda%20para%20planejar%20uma%20viagem." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+  </div>
+</section>
+<button class="switch" id="flip" type="button" aria-controls="back"><span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span></button>
+<div class="notice" id="notice">Publique o site e abra o endereço público para gerar o QR Code.</div>
+<footer class="foot">Bete <span>·</span> Consultoria de Viagens</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const vcard=["BEGIN:VCARD","VERSION:3.0","FN:Bete","TITLE:Consultora de Viagem","TEL;TYPE=CELL,WHATSAPP:+5561992143300","URL:https://www.instagram.com/borabeteviagens/","NOTE:Instagram da loja: @cvc.df.comercialnortetagua","END:VCARD"].join("\\r\\n");
+document.getElementById("saveContact").addEventListener("click",function(e){e.preventDefault();const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Bete-Consultora-de-Viagens.vcf";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)});
+document.getElementById("flip").addEventListener("click",function(){const front=document.getElementById("front"),back=document.getElementById("back"),isBack=back.classList.toggle("visible");front.classList.toggle("hidden",isBack);this.innerHTML=isBack?'<span class="switch-icon" aria-hidden="true">↶</span><span>VOLTAR À FRENTE DO CARTÃO</span>':'<span class="switch-icon" aria-hidden="true">↻</span><span>TOQUE AQUI PARA VER O VERSO</span>';if(isBack&&!window.qrMade){const target=location.protocol==="file:"?"":location.href.split("#")[0];if(target&&window.QRCode){new QRCode(document.getElementById("qrcode"),{text:target,width:168,height:168,colorDark:"#14283f",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});document.getElementById("qrNote").textContent="Escaneie para abrir o cartão digital.";window.qrMade=true}else{document.getElementById("qrNote").textContent="Publique o site e abra o endereço público para gerar o QR Code.";document.getElementById("notice").style.display="block"}}});
+</script>
+</body>
+</html>
